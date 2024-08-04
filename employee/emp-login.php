@@ -11,7 +11,7 @@
       $stmt->execute();//execute bind
       $stmt -> bind_result($emp_email,$emp_pwd,$emp_id);//bind result
       $rs=$stmt->fetch();
-      $_SESSION['emp_id']=$emp_id;//assaign session to passenger id
+      // $_SESSION['emp_id']=$emp_id;//assaign session to passenger id
       //$uip=$_SERVER['REMOTE_ADDR'];
       //$ldate=date('d/m/Y h:i:s', time());
       if($rs)
