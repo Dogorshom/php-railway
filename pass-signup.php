@@ -1,37 +1,35 @@
 <!--Server side code to handle passenger sign up-->
 <?php
-	session_start();
-	include('assets/inc/config.php');
-		if(isset($_POST['pass_register']))
-		{
-			$pass_fname=$_POST['pass_fname'];
-			#$mname=$_POST['mname'];
-			$pass_lname=$_POST['pass_lname'];
-			$pass_phone=$_POST['pass_phone'];
-			$pass_addr=$_POST['pass_addr'];
-			$pass_uname=$_POST['pass_uname'];
-			$pass_email=$_POST['pass_email'];
-			$pass_pwd=sha1(md5($_POST['pass_pwd']));
-      //sql to insert captured values
-			$query="insert into orrs_passenger (pass_fname, pass_lname, pass_phone, pass_addr, pass_uname, pass_email, pass_pwd) values(?,?,?,?,?,?,?)";
-			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param($pass_fname, $pass_lname, $pass_phone, $pass_addr, $pass_uname, $pass_email, $pass_pwd);
-			$stmt->execute();
-			/*
-			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
-			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/ 
-			//declare a varible which will be passed to alert function
-			if($stmt)
-			{
-				$success = "Created Account Proceed To Log In";
-			}
-			else {
-				$err = "Please Try Again Or Try Later";
-			}
-			
-			
-		}
+session_start();
+include('assets/inc/config.php');
+
+if(isset($_POST['pass_register'])) {
+    $pass_fname = $_POST['pass_fname'];
+    $pass_lname = $_POST['pass_lname'];
+    $pass_phone = $_POST['pass_phone'];
+    $pass_addr = $_POST['pass_addr'];
+    $pass_uname = $_POST['pass_uname'];
+    $pass_email = $_POST['pass_email'];
+    $pass_pwd = sha1(md5($_POST['pass_pwd']));
+
+    // SQL to insert captured values
+    $query = "INSERT INTO orrs_passenger (pass_fname, pass_lname, pass_phone, pass_addr, pass_uname, pass_email, pass_pwd) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $stmt = $mysqli->prepare($query);
+    
+    if ($stmt) {
+        $stmt->bind_param("sssssss", $pass_fname, $pass_lname, $pass_phone, $pass_addr, $pass_uname, $pass_email, $pass_pwd);
+        $rc = $stmt->execute();
+
+        if ($rc) {
+            $success = "Created Account. Proceed to Log In";
+        } else {
+            $err = "Error: " . $stmt->error;
+        }
+        $stmt->close();
+    } else {
+        $err = "Error in preparing statement: " . $mysqli->error;
+    }
+}
 ?>
 <!--End Server Side-->
 <!DOCTYPE html>
