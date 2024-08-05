@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    //session_start();
     include('assets/inc/config.php');
     //date_default_timezone_set('Africa /Nairobi');
     include('assets/inc/checklogin.php');

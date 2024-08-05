@@ -1,6 +1,6 @@
 <!--Start Server side code to give us and hold session-->
 <?php
-  session_start();
+  //session_start();
   include('assets/inc/config.php');
   include('assets/inc/checklogin.php');
   check_login();

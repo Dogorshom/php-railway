@@ -1,6 +1,6 @@
 <!-- Server side code for log in-->
 <?php
-    session_start();
+    //session_start();
     include('assets/inc/config.php');//get configuration file
     if(isset($_POST['emp_login']))
     {
