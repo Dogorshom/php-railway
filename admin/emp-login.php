@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="form-group row login-submit">
-                      <div class="col-12"><input type = "submit" name ="emp_login" class="btn btn-danger btn-xl btn-block" value ="Log In"></div>
+                      <div class="col-12"><button type = "submit" name ="emp_login" class="btn btn-danger btn-xl btn-block" >Log In</button></div>
                     </div>
                     
                   </div>
