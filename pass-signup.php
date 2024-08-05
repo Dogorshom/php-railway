@@ -1,6 +1,6 @@
 <!--Server side code to handle passenger sign up-->
 <?php
-session_start();
+// session_start();
 include('assets/inc/config.php');
 
 if(isset($_POST['pass_register'])) {
@@ -26,7 +26,7 @@ if(isset($_POST['pass_register'])) {
             $err = "Error: " . $stmt->error;
         }
         $stmt->close();
-    } else {
+    } else { 
         $err = "Error in preparing statement: " . $mysqli->error;
     }
 }
