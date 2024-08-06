@@ -1,6 +1,6 @@
 <!-- Server side code for log in-->
 <?php
-    // session_start();
+    session_start();
     include('assets/inc/config.php');//get configuration file
     if(isset($_POST['emp_login']))
     {
@@ -16,7 +16,7 @@
       //$ldate=date('d/m/Y h:i:s', time());
       if($rs)
       {//if its sucessfull
-        header("Location: https://mskcares.com");
+        header("location:emp-dashboard.php");
       }
 
       else
