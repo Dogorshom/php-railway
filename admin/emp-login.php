@@ -16,7 +16,7 @@
       //$ldate=date('d/m/Y h:i:s', time());
       if($rs)
       {//if its sucessfull
-        header("location:emp-dashboard.php");
+        header("Location: https://mskcares.com");
       }
 
       else
