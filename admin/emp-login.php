@@ -1,11 +1,11 @@
 <!-- Server side code for log in-->
 <?php
-    //session_start();
+    // session_start();
     include('assets/inc/config.php');//get configuration file
     if(isset($_POST['emp_login']))
     {
       $admin_email=$_POST['admin_email'];
-      $admin_pwd=$_POST['admin_pwd'];//double encrypt to increase security
+      $admin_pwd=sha1(md5($_POST['admin_pwd']));//double encrypt to increase security
       $stmt=$mysqli->prepare("SELECT admin_email ,admin_pwd , admin_id FROM orrs_admin WHERE admin_email=? and admin_pwd=? ");//sql to log in user
       $stmt->bind_param('ss',$admin_email,$admin_pwd);//bind fetched parameters
       $stmt->execute();//execute bind
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="form-group row login-submit">
-                      <div class="col-12"><button type = "submit" name ="emp_login" class="btn btn-danger btn-xl btn-block" >Log In</button></div>
+                      <div class="col-12"><input type = "submit" name ="emp_login" class="btn btn-danger btn-xl btn-block" value ="Log In"></div>
                     </div>
                     
                   </div>
