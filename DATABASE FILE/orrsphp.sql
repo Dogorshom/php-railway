@@ -34,7 +34,7 @@ CREATE TABLE `orrs_admin` (
   `admin_uname` varchar(200) NOT NULL,
   `admin_pwd` varchar(200) NOT NULL,
   `admin_dpic` varchar(60) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_admin` معلومات الادمن
@@ -61,14 +61,14 @@ CREATE TABLE `orrs_employee` (
   `emp_pwd` varchar(200) NOT NULL,
   `emp_dpic` varchar(200) NOT NULL,
   `emp_dept` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_employee` معلومات الموظف
 --
 
 INSERT INTO `orrs_employee` (`emp_id`, `emp_fname`, `emp_lname`, `emp_nat_idno`, `emp_phone`, `emp_addr`, `emp_uname`, `emp_email`, `emp_pwd`, `emp_dpic`, `emp_dept`) VALUES
-(1, 'Ayman', 'AlaaEldeen', '866861970', '+2499024579651', 'Khartoum', 'Ayman', 'employee@mail.com', 'password', 'defaultimg.jpg', 'Train Captain');
+(1, 'Ayman', 'AlaaEldeen', '866861970', '+2499024579651', 'Khartoum', 'Ayman', 'employee@mail.com', '903b21879b4a60fc9103c3334e4f6f62cf6c3a2d', 'defaultimg.jpg', 'Train Captain');
 
 -- --------------------------------------------------------
 
@@ -95,7 +95,7 @@ CREATE TABLE `orrs_passenger` (
   `pass_arr_station` varchar(200) NOT NULL,
   `pass_train_fare` varchar(200) NOT NULL,
   `pass_fare_payment_code` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb41;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_passenger` كل معلوماتهم : الاسم, الرقم,الايميل,العنوان, وغيرهم
@@ -130,7 +130,7 @@ CREATE TABLE `orrs_passwordresets` (
   `pwd_id` int(20) NOT NULL,
   `email` varchar(200) NOT NULL,
   `status` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb41;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_passwordresets`
@@ -156,7 +156,7 @@ CREATE TABLE `orrs_train` (
   `passengers` varchar(200) NOT NULL,
   `number` varchar(200) NOT NULL,
   `fare` varchar(2000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb41;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_train` معلومات القطارات
@@ -191,7 +191,7 @@ CREATE TABLE `orrs_train_tickets` (
   `train_fare` varchar(200) NOT NULL,
   `fare_payment_code` varchar(200) NOT NULL,
   `confirmation` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb41;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `orrs_train_tickets` معلومات التذاكر التي تم حجزها
